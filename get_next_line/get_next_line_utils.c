@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 10:23:51 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/06/25 10:59:55 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/06/25 13:10:59 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,33 @@ int	ft_strlen(char *c)
 	}
 	return (i);
 }
+/* char	*ft_strjoin(char *s1, char *s2)
+{
+	int		lens1;
+	int		lens2;
+	int		i;
+	int		j;
+	char	*s_final;
 
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	s_final = (char *)malloc(lens1 + lens2 + 1);
+	if (s_final == NULL)
+		return (NULL);
+	i = -1;
+	j = -1;
+	while (i++ < (lens1 -1))
+		s_final[i] = s1[i];
+	while (j++ < (lens2 - 1))
+	{
+		s_final[i] = s2[j];
+		i++;
+	}
+	s_final[i] = '\0';
+	if (s1)
+		free (s1);
+	return (s_final);
+} */
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char *str;
@@ -45,8 +71,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (*s2)
 		*str++ = *s2++;
 	*str = '\0';
-	if (s1)
-		free (s1);
 	return start;
 }
 
@@ -86,23 +110,4 @@ void	*ft_cleanread (char *actual_line, char *buffer_content)
 	return (actual_line);
 }
 
-
-/* char	*ft_strjoin(char *s1, char *s2)
-{
-	char *str;
-	int size;
-
-	size = ft_strlen(s1) + ft_strlen(s2);
-	str = malloc (size + 1);
-	if (!str)
-		return NULL;
-	while (*s1)
-		*str++ = *s1++;
-	while (*s2)
-		*str++ = *s2++;
-	*str = '\0';
-	if (s1)
-		free (s1);
-	return (str - size);
-} */
 
