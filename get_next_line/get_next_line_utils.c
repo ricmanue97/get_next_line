@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 10:23:51 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/06/25 13:10:59 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:04:40 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,59 +24,38 @@ int	ft_strlen(char *c)
 	}
 	return (i);
 }
-/* char	*ft_strjoin(char *s1, char *s2)
+
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		lens1;
 	int		lens2;
 	int		i;
 	int		j;
-	char	*s_final;
+	char	*str;
 
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
-	s_final = (char *)malloc(lens1 + lens2 + 1);
-	if (s_final == NULL)
+	str = (char *)malloc(lens1 + lens2 + 1);
+	if (str == NULL)
 		return (NULL);
 	i = -1;
 	j = -1;
 	while (i++ < (lens1 -1))
-		s_final[i] = s1[i];
+		str[i] = s1[i];
 	while (j++ < (lens2 - 1))
 	{
-		s_final[i] = s2[j];
+		str[i] = s2[j];
 		i++;
 	}
-	s_final[i] = '\0';
+	str[i] = '\0';
 	if (s1)
 		free (s1);
-	return (s_final);
-} */
-char	*ft_strjoin(char *s1, char *s2)
-{
-	char *str;
-	char *start;
-	int size;
-
-	if (!s1)
-		s1 = "";
-	if (!s2)
-		s2 = "";
-	size = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(size + 1);
-	if (!str)
-		return NULL;
-	start = str;
-	while (*s1)
-		*str++ = *s1++;
-	while (*s2)
-		*str++ = *s2++;
-	*str = '\0';
-	return start;
+	return (str);
 }
 
-int ft_newline (char *str)
+int	ft_newline(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
@@ -90,10 +69,10 @@ int ft_newline (char *str)
 	return (-1);
 }
 
-void	*ft_cleanread (char *actual_line, char *buffer_content)
+void	*ft_cleanread(char *actual_line, char *buffer_content)
 {
-	size_t i;
-	int flag;
+	size_t	i;
+	int		flag;
 
 	i = 0;
 	flag = ft_newline(actual_line);
@@ -109,5 +88,3 @@ void	*ft_cleanread (char *actual_line, char *buffer_content)
 		buffer_content[i++] = '\0';
 	return (actual_line);
 }
-
-

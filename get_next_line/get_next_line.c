@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 10:23:48 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/06/25 10:35:12 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:22:26 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*get_next_line(int fd)
 	char		*actual_line;
 	int			bytes;
 
-	if ( fd < 0 || BUFFER_SIZE <= 0)
-		return NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
 	actual_line = NULL;
-	while (ft_newline(actual_line)== -1)
+	while (ft_newline(actual_line) == -1)
 	{
 		if (buffer_content[0] == '\0')
 		{
@@ -41,7 +41,28 @@ char	*get_next_line(int fd)
 	return (actual_line);
 }
 
-int	main()
+/* int	main()
+{
+	int		fd;
+	char	*line;
+	int		lines;
+
+	lines = 1;
+	fd = ;
+
+	while ((line = get_next_line(fd)))
+	{
+		if (fd == 0 && line[0] == 'e' 	&& line[3] == 't')
+		{
+			free (line);
+			return (0);
+		}
+		printf("%d->%s", lines++, line);
+		free(line);
+	}
+
+} */
+/* int	main()
 {
 	int		fd;
 	char	*line;
@@ -55,4 +76,4 @@ int	main()
 		printf("%d->%s", lines++, line);
 		free(line);
 	}
-}
+} */
