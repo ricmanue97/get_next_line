@@ -1,6 +1,3 @@
-Sure! Here's a template for a `README.md` file for your `get_next_line` repository:
-
-```markdown
 # get_next_line
 
 `get_next_line` is a project aimed at creating a function that reads a line from a file descriptor and returns it. This project is implemented in C.
