@@ -51,13 +51,3 @@ char *get_next_line(int fd);
 - `fd`: The file descriptor from which to read.
 - Returns: The next line read from the file descriptor, or `NULL` if an error occurs or the end of the file is reached.
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-You can copy and paste this template into your `README.md` file. Let me know if you need any modifications or additional sections!
